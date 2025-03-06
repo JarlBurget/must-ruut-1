@@ -150,9 +150,14 @@ const DesktopPage = () => {
         <section
           ref={contactRef}
           id="contact-form"
-          className="flex flex-row h-200 scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
+          className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
         >
-          <ContactForm />
+          <div className="w-1/2 h-full flex flex-col justify-center items-center bg-red-500">
+
+          </div>
+          <div className="w-1/2 h-full flex flex-col justify-center items-center">
+            <ContactForm />
+          </div>
         </section>
       </main>
       <DesktopFooter />
