@@ -5,6 +5,7 @@ import ContactForm from "./UI/ContactForm";
 import Separator from "./UI/Separator";
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from "react-router";
+import MemberCarousel from "./UI/MemberCarousel";
 
 const DesktopPage = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -60,12 +61,15 @@ const DesktopPage = () => {
           ref={heroRef}
           id="hero"
           className="bg-[url(/images/hero-2560.webp)] max-w-screen h-screen max-h-[1580px] min-h-[900px] bg-cover bg-center"
+          data-testid="hero-section"
         ></section>
         <Separator />
         <section
           ref={concertsRef}
           id="concerts"
           className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
+          data-testid="concerts-section"
+
         >
           <div className="w-2/5 lg:w-1/3 h-full text-white p-3">
             <h2 className="text-center mt-10 text-2xl lg:text-4xl">
@@ -101,10 +105,12 @@ const DesktopPage = () => {
           ref={musicRef}
           id="music"
           className="mx-20 lg:mx-40 xl:mx-80 scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50 pb-8"
+          data-testid="music-section"
         >
           <h2 className="text-white text-2xl p-4 text-center">Kuula mussi</h2>
           <div>
             <iframe
+              title="Spotify iframe"
               className="rounded-[12px]"
               src="https://open.spotify.com/embed/artist/4YCL2HISYkUON4kUpWnt06?utm_source=generator&theme=0"
               width="100%"
@@ -119,6 +125,7 @@ const DesktopPage = () => {
           ref={aboutRef}
           id="about-us"
           className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50 items-center gap-20 px-20"
+          data-testid="about-section"
         >
           <div className="w-2/3 lg:w-1/2 h-full flex flex-col justify-center">
             <h2 className="ml-4 lg:ml-7 xl:ml-10  lg:text-4xl">
@@ -144,13 +151,17 @@ const DesktopPage = () => {
         <section
           ref={membersRef}
           id="members"
-          className="flex flex-row h-200 scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
-        ></section>
+          className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
+          
+        >
+          <MemberCarousel/>
+        </section>
         <Separator />
         <section
           ref={contactRef}
           id="contact-form"
           className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
+          data-testid="contact-section"
         >
           <div className="w-1/2 h-full flex flex-col justify-center items-center bg-red-500">
 
@@ -159,6 +170,7 @@ const DesktopPage = () => {
             <ContactForm />
           </div>
         </section>
+        <Separator />
       </main>
       <DesktopFooter />
     </>
