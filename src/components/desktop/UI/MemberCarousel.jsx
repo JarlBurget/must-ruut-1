@@ -27,31 +27,31 @@ const MemberCarousel = () => {
     const IMAGES = [
         {
             id: 0,
-            imageSrc: 'images/liikmed/Agur_portree.jpg',
+            imageSrc: 'images/liikmed/Agur_portree.webp',
             name: 'Agur',
             description: "Agur is a member of the team.",
         },
         {
             id: 1,
-            imageSrc: "images/liikmed/Albert_portree_for_real.jpg",
+            imageSrc: "images/liikmed/Albert_portree_for_real.webp",
             name: 'Albert',
             description: "Albert is a member of the team.",
         },
         {
             id: 2,
-            imageSrc: "images/liikmed/Hanno_portree.jpg",
+            imageSrc: "images/liikmed/Hanno_portree.webp",
             name: 'Hanno',
             description: "Hanno is a member of the team.",
         },
         {
             id: 3,
-            imageSrc: "images/liikmed/Mart_portree.jpg",
+            imageSrc: "images/liikmed/Mart_portree.webp",
             name: 'Mart',
             description: "Mart is a member of the team.",
         },
         {
             id: 4,
-            imageSrc: "images/Silver Lokk-Heli.jfif",
+            imageSrc: "images/liikmed/Silver_portree.webp",
             name: 'Silver',
             description: "Silver is a member of the team",
         }
@@ -86,7 +86,7 @@ const MemberCarousel = () => {
     return (
         <div className='flex flex-col items-center justify-center w-full'>
             <div className="flex flex-col items-center my-6">
-                <div className="relative h-[400px] w-[350px] overflow-hidden">
+                <div className="relative h-140 w-120 overflow-hidden">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={imageCount}
@@ -103,32 +103,54 @@ const MemberCarousel = () => {
                             dragConstraints={{ left: 0, right: 0 }}
                             dragElastic={1}
                             onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-                            className="absolute h-full w-full bg-cover bg-center bg-no-repeat hover:cursor-grab active:cursor-grabbing"
+                            className="absolute h-full w-full bg-contain bg-center bg-no-repeat hover:cursor-grab active:cursor-grabbing"
                         />
                     </AnimatePresence>
                 </div>
-
-                <div className="mt-3">
-                    <button className="py-3 px-4" onClick={() => swipeToImage(-1)}>PREV</button>
-                    <button className="py-3 px-4" onClick={() => swipeToImage(1)}>NEXT</button>
-                </div>
             </div>
-
-            <div className="flex justify-center">
+            <div className="flex justify-center gap-4">
+                <button className="py-3 px-4 text-8xl" onClick={() => swipeToImage(-1)}>
+                    <svg
+                        width={50}
+                        height={50}
+                        viewBox="-5 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="cursor-pointer transform transition-transform transition-filter duration-300 ease-in-out hover:scale-125"
+                    >
+                        <path
+                            d="M21.531 19.156v-6.719c0-.813-.594-1.406-1.406-1.406h-7.813V5.718c0-.5-.25-.844-.688-1.063-.156-.031-.313-.063-.438-.063-.313 0-.563.094-.75.313L.311 15.03c-.438.375-.406 1.125 0 1.563l10.125 10.125c.625.688 1.875.219 1.875-.813V20.53h7.813c.813 0 1.406-.563 1.406-1.375z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </button>
                 {IMAGES.map(image => (
                 <div
                     key={image.id}
                     onClick={() => skipToImage(image.id)}
-                    className="relative w-[90px] h-[120px]"
+                    className="relative w-25 h-30"
                 >
                     <img src={image.imageSrc} alt={image.name} className="w-full h-full object-cover object-center" />
                     <div
                     className={`absolute bottom-0 left-0 w-full h-full pointer-events-none ${
-                        image.id === activeImageIndex ? "bg-gray" : null
+                        image.id === activeImageIndex ? "border-3 border-red-800" : null
                     }`}
                     />
                 </div>
                 ))}
+                <button className="py-3 px-4 text-8xl" onClick={() => swipeToImage(1)}>
+                    <svg
+                        width={50}
+                        height={50}
+                        viewBox="-5 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="cursor-pointer transform rotate-180 transition-transform transition-filter duration-300 ease-in-out hover:scale-125"
+                    >
+                        <path
+                            d="M21.531 19.156v-6.719c0-.813-.594-1.406-1.406-1.406h-7.813V5.718c0-.5-.25-.844-.688-1.063-.156-.031-.313-.063-.438-.063-.313 0-.563.094-.75.313L.311 15.03c-.438.375-.406 1.125 0 1.563l10.125 10.125c.625.688 1.875.219 1.875-.813V20.53h7.813c.813 0 1.406-.563 1.406-1.375z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </button>
             </div>
         </div>
     )
