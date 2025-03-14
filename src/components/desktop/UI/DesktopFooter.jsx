@@ -33,7 +33,7 @@ const DesktopFooter = () => {
           </div>
 
           <div>
-            <h4 class="text-lg text-white font-medium mb-7 text-center">Jälgi meid</h4>
+            <h4 className="text-lg text-white font-medium mb-7 text-center">Jälgi meid</h4>
             <div className="flex flex-col items-center">
               <div className="flex space-x-6 mb-4">
               <Link to="https://soundcloud.com/" target="_blank" rel="noopener noreferrer">

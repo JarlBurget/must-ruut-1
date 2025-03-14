@@ -86,13 +86,10 @@ const MemberCarousel = () => {
     return (
         <div className='flex flex-col items-center justify-center w-full'>
             <div className="flex flex-col items-center my-6">
-                <div className="relative h-140 w-120 overflow-hidden">
+                <div className="relative h-140 w-240 overflow-hidden">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={imageCount}
-                            style={{
-                                backgroundImage: `url(${IMAGES[activeImageIndex].imageSrc})`
-                            }}
                             custom={direction}
                             variants={sliderVariants}
                             initial="incoming"
@@ -103,8 +100,23 @@ const MemberCarousel = () => {
                             dragConstraints={{ left: 0, right: 0 }}
                             dragElastic={1}
                             onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-                            className="absolute h-full w-full bg-contain bg-center bg-no-repeat hover:cursor-grab active:cursor-grabbing"
-                        />
+                            className="absolute h-full w-full flex flex-row hover:cursor-grab active:cursor-grabbing"
+                        >
+                            <div
+                                style={{
+                                    backgroundImage: `url(${IMAGES[activeImageIndex].imageSrc})`
+                                }}
+                                className="bg-contain bg-center bg-no-repeat h-full w-1/2"
+                            />
+                            <div className="h-full w-1/2 flex flex-col justify-center items-center p-6">
+                                <h2 className="text-2xl lg:text-4xl py-6">
+                                    {IMAGES[activeImageIndex].name}
+                                </h2>
+                                <p className="lg:text-2xl">
+                                    {IMAGES[activeImageIndex].description}
+                                </p>
+                            </div>
+                        </motion.div>
                     </AnimatePresence>
                 </div>
             </div>
