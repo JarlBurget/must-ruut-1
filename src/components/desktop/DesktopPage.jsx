@@ -1,11 +1,12 @@
-import DesktopHeader from "./UI/DesktopHeader"
-import DesktopFooter from "./UI/DesktopFooter"
-import ConcertDate from "./UI/ConcertDate";
+import DesktopHeader from "./UI/DesktopHeader";
+import DesktopFooter from "./UI/DesktopFooter";
+import ConcertDate from "../common/UI/ConcertDate";
 import ContactForm from "./UI/ContactForm";
-import Separator from "./UI/Separator";
-import { useState, useRef, useEffect } from 'react';
+import Separator from "../common/UI/Separator";
+import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router";
 import MemberCarousel from "./UI/MemberCarousel";
+import { useAppContext } from "../../context/AppContext";
 
 const DesktopPage = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -16,42 +17,45 @@ const DesktopPage = () => {
   const membersRef = useRef(null);
   const contactRef = useRef(null);
   const location = useLocation();
+  const { app } = useAppContext();
 
   useEffect(() => {
     switch (location.hash) {
-      case '#hero':
-        if (heroRef.current) heroRef.current.scrollIntoView({ behavior: 'smooth' });
+      case "#hero":
+        if (heroRef.current)
+          heroRef.current.scrollIntoView({ behavior: "smooth" });
         break;
-      case '#concerts':
-        if (concertsRef.current) concertsRef.current.scrollIntoView({ behavior: 'smooth' });
+      case "#concerts":
+        if (concertsRef.current)
+          concertsRef.current.scrollIntoView({ behavior: "smooth" });
         break;
-      case '#music':
-        if (musicRef.current) musicRef.current.scrollIntoView({ behavior: 'smooth' });
+      case "#music":
+        if (musicRef.current)
+          musicRef.current.scrollIntoView({ behavior: "smooth" });
         break;
-      case '#about-us':
-        if (aboutRef.current) aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+      case "#about-us":
+        if (aboutRef.current)
+          aboutRef.current.scrollIntoView({ behavior: "smooth" });
         break;
-      case '#members':
-        if (membersRef.current) membersRef.current.scrollIntoView({ behavior: 'smooth' });
+      case "#members":
+        if (membersRef.current)
+          membersRef.current.scrollIntoView({ behavior: "smooth" });
         break;
-      case '#contact-form':
-        if (contactRef.current) contactRef.current.scrollIntoView({ behavior: 'smooth' });
+      case "#contact-form":
+        if (contactRef.current)
+          contactRef.current.scrollIntoView({ behavior: "smooth" });
         break;
       default:
         break;
     }
   }, [location]);
-  
+
   // Toggle mute/unmute when video is clicked
   const handleClick = () => {
     setIsMuted(!isMuted); // Toggle mute state
   };
-  const concerts = [
-    { day: 15, month: 'Märts', year: 2025, title:'asdargsdhdfhjfgfhdfgfsddd' },
-    { day: 22, month: 'March', year: 2025 },
-    { day: 5, month: 'April', year: 2025 },
-    // Add more concerts here
-  ];
+  const concerts = app.concerts;
+  const about = app.about;
 
   return (
     <>
@@ -69,9 +73,8 @@ const DesktopPage = () => {
           id="concerts"
           className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
           data-testid="concerts-section"
-
         >
-          <div className="w-2/5 lg:w-1/3 h-full text-white p-3">
+          <div className="w-1/2 lg:w-2/5 h-full text-white p-3">
             <h2 className="text-center mt-10 text-2xl lg:text-4xl">
               Tulevased kontserdid
             </h2>
@@ -87,7 +90,7 @@ const DesktopPage = () => {
               ))}
             </div>
           </div>
-          <div className="w-3/5 lg:w-2/3 h-full">
+          <div className="w-1/2 lg:w-3/5 h-full">
             <video
               src="/videos/Luftaken.mp4"
               type="video/mp4"
@@ -128,20 +131,15 @@ const DesktopPage = () => {
           data-testid="about-section"
         >
           <div className="w-2/3 lg:w-1/2 h-full flex flex-col justify-center">
-            <h2 className="ml-4 lg:ml-7 xl:ml-10  lg:text-4xl">
-              Meist
-            </h2>
-            <p className="ml-4 lg:ml-7 xl:ml-10  lg:text-2xl pt-15">
-              Must Ruut on alternatiivroki bänd, mille muusika on segu mitmest
-              erinevast stiilist. Sõltuvalt vaatenurgast võib meie lugudes
-              tajuda nii folgi hingestatust, funki mängulisust kui ka pungi
-              energiat. Meie looming on inspireeritud elust ja selle
-              varjukülgedest – aus ja emotsionaalne.
-              <br />
-              <br />
-              Me ei karda eksperimenteerida, viies kuulajad rännakule, kus
-              meloodiad ja sõnad räägivad lugusid, mis jäävad kauaks meelde.{" "}
-            </p>
+            <h2 className="ml-4 lg:ml-7 xl:ml-10  lg:text-4xl">Meist</h2>
+            {about.map((item, index) => (
+              <p
+                className="ml-4 lg:ml-7 xl:ml-10  lg:text-2xl pt-15"
+                key={index}
+              >
+                {item.paragraph}
+              </p>
+            ))}
           </div>
           <div className="w-1/3 lg:w-1/2 h-full flex justify-center items-center">
             <img src="images/logo_mr.JPG" alt="Bandi logo" />
@@ -152,9 +150,8 @@ const DesktopPage = () => {
           ref={membersRef}
           id="members"
           className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
-          
         >
-          <MemberCarousel/>
+          <MemberCarousel />
         </section>
         <Separator />
         <section
@@ -163,8 +160,10 @@ const DesktopPage = () => {
           className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
           data-testid="contact-section"
         >
-          <div className="w-1/2 h-full flex flex-col justify-center items-center bg-red-500">
-
+          <div className="w-1/2 h-full flex flex-col justify-center items-center ">
+            <div className="w-1/3 lg:w-1/2 h-full flex justify-center items-center">
+              <img src="images/kontakt_pilt.webp" alt="Bandi logo" />
+            </div>
           </div>
           <div className="w-1/2 h-full flex flex-col justify-center items-center">
             <ContactForm />
@@ -175,5 +174,5 @@ const DesktopPage = () => {
       <DesktopFooter />
     </>
   );
-}
-export default DesktopPage
+};
+export default DesktopPage;

@@ -1,8 +1,16 @@
 import { useReducer } from "react";
 import AppContext from "./AppContext";
+import aboutJSON from "../data/about.json";
+import membersJSON from "../data/bandMemberCarousel.json";
+import demoJSON from "../data/demoVideos.json";
+import concertsJSON from "../data/concerts.json";
 
 const initialState = {
     modalVisible: false,
+    about: aboutJSON,
+    members: membersJSON,
+    demoVideos: demoJSON,
+    concerts: concertsJSON,
 }
 
 function appReducer(state, action) {

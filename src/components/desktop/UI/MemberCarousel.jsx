@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { wrap } from '../../../utils/wrap';
+import { useAppContext } from '../../../context/AppContext';
 
 const MemberCarousel = () => {
+    const { app } = useAppContext();
+
     const sliderVariants = {
         incoming: direction => ({
             x: direction > 0 ? "100%" : "-100%",
@@ -24,38 +27,7 @@ const MemberCarousel = () => {
 
     const [[imageCount, direction], setImageCount] = useState([0, 0])
 
-    const IMAGES = [
-        {
-            id: 0,
-            imageSrc: 'images/liikmed/Agur_portree.webp',
-            name: 'Agur',
-            description: "Agur is a member of the team.",
-        },
-        {
-            id: 1,
-            imageSrc: "images/liikmed/Albert_portree_for_real.webp",
-            name: 'Albert',
-            description: "Albert is a member of the team.",
-        },
-        {
-            id: 2,
-            imageSrc: "images/liikmed/Hanno_portree.webp",
-            name: 'Hanno',
-            description: "Hanno is a member of the team.",
-        },
-        {
-            id: 3,
-            imageSrc: "images/liikmed/Mart_portree.webp",
-            name: 'Mart',
-            description: "Mart is a member of the team.",
-        },
-        {
-            id: 4,
-            imageSrc: "images/liikmed/Silver_portree.webp",
-            name: 'Silver',
-            description: "Silver is a member of the team",
-        }
-    ];
+    const IMAGES = app.members;
 
     const activeImageIndex = wrap(0, IMAGES.length, imageCount)
 

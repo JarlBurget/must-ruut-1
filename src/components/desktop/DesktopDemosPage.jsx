@@ -1,7 +1,7 @@
 import DesktopHeader from "./UI/DesktopHeader"
 import DesktopFooter from "./UI/DesktopFooter"
 import DemoVideo from "./UI/DemoVideo"
-import Separator from "./UI/Separator"
+import Separator from "../common/UI/Separator"
 
 const DesktopDemosPage = () => {
   const demoVideos = [

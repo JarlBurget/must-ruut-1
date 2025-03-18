@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "imageSrc": "images/liikmed/Agur_portree.webp",
+        "name": "Agur",
+        "description": "Kitarr ja vokaalid"
+    },
+    {
+        "id": 1,
+        "imageSrc": "images/liikmed/Albert_portree_for_real.webp",
+        "name": "Albert Mihkel Ulla",
+        "description": "Basskitarr"
+    },
+    {
+        "id": 2,
+        "imageSrc": "images/liikmed/Hanno_portree.webp",
+        "name": "Hanno Võsu",
+        "description": "Trummid"
+    },
+    {
+        "id": 3,
+        "imageSrc": "images/liikmed/Mart_portree.webp",
+        "name": "Mart Timuska",
+        "description": "Klahvpillid"
+    },
+    {
+        "id": 4,
+        "imageSrc": "images/liikmed/Silver_portree.webp",
+        "name": "Silver ",
+        "description": "Helimees"
+    }
+]
