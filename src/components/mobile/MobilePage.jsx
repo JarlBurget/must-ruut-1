@@ -5,6 +5,8 @@ import Separator from "../common/UI/Separator";
 import MobileHeader from "./UI/MobileHeader";
 import MobileFooter from "./UI/MobileFooter";
 import ConcertDate from "../common/UI/ConcertDate";
+import MobileNav from "./UI/MobileNav";
+import MobileMemberCarousel from "./UI/MobileMemberCarousel";
 
 const MobilePage = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -57,6 +59,7 @@ const MobilePage = () => {
   return (
     <>
       <MobileHeader />
+      <MobileNav />
       <main>
         <section
           ref={heroRef}
@@ -140,7 +143,13 @@ const MobilePage = () => {
           </div>
         </section>
         <Separator />
-        <section></section>
+        <section
+          ref={membersRef}
+          id="members"
+          className="flex flex-row scroll-mt-32"
+        >
+          <MobileMemberCarousel />
+        </section>
         <Separator />
       </main>
       <MobileFooter />

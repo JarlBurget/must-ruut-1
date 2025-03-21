@@ -157,15 +157,13 @@ const DesktopPage = () => {
         <section
           ref={contactRef}
           id="contact-form"
-          className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50"
+          className="flex flex-row scroll-mt-32 lg:scroll-mt-46 xl:scroll-mt-50 flex items-stretch"
           data-testid="contact-section"
         >
-          <div className="w-1/2 h-full flex flex-col justify-center items-center ">
-            <div className="w-1/3 lg:w-1/2 h-full flex justify-center items-center">
-              <img src="images/kontakt_pilt.webp" alt="Bandi logo" />
-            </div>
+          <div className="w-1/2 h-full flex flex-col justify-center items-center my-auto">
+            <img className="max-w-100 xl:max-w-150" src="images/kontakt_pilt.webp" alt="Bandi logo lava taustal" />
           </div>
-          <div className="w-1/2 h-full flex flex-col justify-center items-center">
+          <div className="w-1/2 h-full flex flex-col justify-center items-center pr-34">
             <ContactForm />
           </div>
         </section>

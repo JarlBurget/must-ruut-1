@@ -1,26 +1,10 @@
 import DesktopHeader from "./UI/DesktopHeader"
 import DesktopFooter from "./UI/DesktopFooter"
-import DemoVideo from "./UI/DemoVideo"
+import DemoVideo from "../common/UI/DemoVideo"
 import Separator from "../common/UI/Separator"
+import demoVideos from "../../data/demoVideos.json"
 
 const DesktopDemosPage = () => {
-  const demoVideos = [
-    {
-      videoUrl: "https://www.youtube.com/embed/E4WlUXrJgy4?si=KOlUo4jkk6f1KNN1",
-    },
-    {
-      videoUrl: "https://www.youtube.com/embed/E4WlUXrJgy4?si=KOlUo4jkk6f1KNN1",
-    },
-    {
-      videoUrl: "https://www.youtube.com/embed/E4WlUXrJgy4?si=KOlUo4jkk6f1KNN1",
-    },
-    {
-      videoUrl: "https://www.youtube.com/embed/E4WlUXrJgy4?si=KOlUo4jkk6f1KNN1",
-    },
-    {
-      videoUrl: "https://www.youtube.com/embed/E4WlUXrJgy4?si=KOlUo4jkk6f1KNN1",
-    }
-  ];
 
   return (
     <>
