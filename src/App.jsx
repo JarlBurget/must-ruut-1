@@ -4,6 +4,7 @@ import MobilePage from './components/mobile/MobilePage.jsx';
 import MobileDemosPage from './components/mobile/MobileDemosPage.jsx';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
+import ScrollToTop from './utils/ScrollToTop';
 import AppProvider from './context/AppProvider';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
   return (
     <AppProvider>
       <BrowserRouter>
+      <ScrollToTop />
         {isDesktop ? <DesktopRoutes /> : <MobileRoutes />}
       </BrowserRouter>
     </AppProvider>

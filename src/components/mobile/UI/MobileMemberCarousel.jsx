@@ -92,22 +92,17 @@ const MobileMemberCarousel = () => {
                     </AnimatePresence>
                 </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4">
-                {IMAGES.map(image => (
+            <div className="flex gap-2 mt-4">
+            {IMAGES.map((image, index) => (
                 <div
                     key={image.id}
-                    onClick={() => skipToImage(image.id)}
-                    className="relative w-25 h-30"
-                >
-                    <img src={image.imageSrc} alt={image.name} className="w-full h-full object-cover object-center" />
-                    <div
-                    className={`absolute bottom-0 left-0 w-full h-full pointer-events-none ${
-                        image.id === activeImageIndex ? "border-3 border-red-800" : null
+                    onClick={() => skipToImage(index)}
+                    className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
+                        index === activeImageIndex ? "bg-red-600 scale-125" : "bg-gray-400"
                     }`}
-                    />
-                </div>
-                ))}
-            </div>
+                />
+            ))}
+        </div>
         </div>
     )
 }

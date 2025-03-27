@@ -161,7 +161,15 @@ const DesktopPage = () => {
           data-testid="contact-section"
         >
           <div className="w-1/2 h-full flex flex-col justify-center items-center my-auto">
-            <img className="max-w-100 xl:max-w-150" src="images/kontakt_pilt.webp" alt="Bandi logo lava taustal" />
+            <img className="max-w-100 xl:max-w-150" 
+            src="images/kontaktvorm.jpg" 
+            alt="Bandi logo lava taustal" 
+            style={{
+              WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 5%, rgba(0,0,0,1) 90%, rgba(0,0,0,0)), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1) 5%, rgba(0,0,0,1) 80%, rgba(0,0,0,0))",
+              maskImage: "linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0)), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1) 5%, rgba(0,0,0,1) 80%, rgba(0,0,0,0))",
+              WebkitMaskComposite: "multiply",
+              maskComposite: "intersect"
+            }}/>
           </div>
           <div className="w-1/2 h-full flex flex-col justify-center items-center pr-34">
             <ContactForm />
