@@ -15,6 +15,7 @@ const MobilePage = () => {
   const musicRef = useRef(null);
   const aboutRef = useRef(null);
   const membersRef = useRef(null);
+  const contactRef = useRef(null);
   const location = useLocation();
   const { app } = useAppContext();
 
@@ -152,7 +153,7 @@ const MobilePage = () => {
         </section>
         <Separator />
       </main>
-      <MobileFooter />
+      <MobileFooter ref={contactRef} />
     </>
   );
 };
