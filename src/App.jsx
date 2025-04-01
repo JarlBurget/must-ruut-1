@@ -40,7 +40,7 @@ function App() {
 
   return (
     <AppProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/must-ruut/">
       <ScrollToTop />
         {isDesktop ? <DesktopRoutes /> : <MobileRoutes />}
       </BrowserRouter>

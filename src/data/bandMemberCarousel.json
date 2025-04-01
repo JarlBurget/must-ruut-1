@@ -2,8 +2,8 @@
     {
         "id": 0,
         "imageSrc": "images/liikmed/Agur_portree.webp",
-        "name": "Agur",
-        "description": "Kitarr ja vokaalid"
+        "name": "Agur-Andri Tarmo",
+        "description": "Kitarr ja vokaal"
     },
     {
         "id": 1,
@@ -21,12 +21,12 @@
         "id": 3,
         "imageSrc": "images/liikmed/Mart_portree.webp",
         "name": "Mart Timuska",
-        "description": "Klahvpillid"
+        "description": "Klahvpill"
     },
     {
         "id": 4,
         "imageSrc": "images/liikmed/Silver_portree.webp",
-        "name": "Silver ",
+        "name": "Silver Lokk",
         "description": "Helimees"
     }
 ]

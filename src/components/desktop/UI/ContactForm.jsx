@@ -64,7 +64,7 @@ const ContactForm = () => {
           className="bg-gray-300 rounded-xl text-2xl py-4 px-6 text-black cursor-pointer transition duration-300 hover:brightness-75  "
           type="submit"
         >
-          Submit Form
+          Saada
         </button>
       </form>
       <span>{result}</span>

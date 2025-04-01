@@ -7,11 +7,21 @@ const DesktopFooter = () => {
         <div className="md:flex md:justify-between">
           <div className="flex flex-row items-center left-0 top-8 pointer-events-none">
             <Link to="/#hero" className="pointer-events-auto">
-              <img
+              <svg
                 className="w-[65px] lg:w-[95px] xl:w-[140px] drop-shadow-[0_0_20px_rgba(231,17,17,_1)] drop-shadow-[0_0_30px_rgba(256,1,1,_1)] transition-transform transition-filter duration-300 ease-in-out"
-                src="/images/ruut.webp"
-                alt="Must ruut"
-              />
+                viewBox="0 0 180 180"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  style={{
+                    fill: "#000",
+                    stroke: "#000",
+                    strokeWidth: 20.9293,
+                    paintOrder: "stroke markers fill",
+                  }}
+                  d="M10.465 10.465h159.071v159.071H10.465z"
+                />
+              </svg>
             </Link>
           </div>
           <div className="text-left ">

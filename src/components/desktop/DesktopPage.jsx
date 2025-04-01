@@ -92,7 +92,7 @@ const DesktopPage = () => {
           </div>
           <div className="w-1/2 lg:w-3/5 h-full">
             <video
-              src="/videos/Luftaken.mp4"
+              src={`${import.meta.env.BASE_URL}videos/kontserti_video.mp4`}
               type="video/mp4"
               className="w-full h-auto rounded-xl shadow-lg p-8"
               autoPlay
@@ -161,8 +161,8 @@ const DesktopPage = () => {
           data-testid="contact-section"
         >
           <div className="w-1/2 h-full flex flex-col justify-center items-center my-auto">
-            <img className="max-w-100 xl:max-w-150" 
-            src="images/kontaktvorm.jpg" 
+            <img className="max-w-120 xl:max-w-160" 
+            src="images/Kontaktvormi_pilt.jpg" 
             alt="Bandi logo lava taustal" 
             style={{
               WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 5%, rgba(0,0,0,1) 90%, rgba(0,0,0,0)), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1) 5%, rgba(0,0,0,1) 80%, rgba(0,0,0,0))",

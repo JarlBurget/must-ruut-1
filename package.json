@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build --base=/must-ruut/",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest --root tests/"
@@ -37,4 +37,5 @@
     "vite": "^6.2.0",
     "vitest": "^3.0.8"
   }
+  
 }
