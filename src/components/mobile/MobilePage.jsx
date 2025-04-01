@@ -92,14 +92,14 @@ const MobilePage = () => {
           </div>
           <div className="w-full">
             <video
-              src="/videos/Luftaken.mp4"
+              src={`${import.meta.env.BASE_URL}videos/kontserti_video.mp4`}
               type="video/mp4"
               className="w-full h-auto rounded-xl shadow-lg p-8"
               autoPlay
+              playsInline 
               loop
-              muted={isMuted} // Apply the mute state dynamically
-              onClick={handleClick} // Toggle mute on click
-              style={{ cursor: "pointer" }}
+              muted={isMuted} 
+              onClick={handleClick} 
             ></video>
           </div>
         </section>
